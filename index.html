@@ -118,7 +118,7 @@
 
                     <!-- TODO: dorobić formularz do google lub netlifi -->
                     <article>
-                        <form action=".">
+                        <form name="contact" method="POST" data-netlify="true">
                             <div class="input-group">
                                 <label for="name" class="fs-s">Imię i nazwisko</label>
                                 <input type="text" name="name" id="name" placeholder="Name" required>
@@ -142,6 +142,16 @@
         <footer class="full-width bg-primary fs-s txt-center py-m">
             <p>Copyright ©2024. All Rights Reserved.</p>
         </footer>
+
+        <!-- scripts -->
+        <script>
+            // Optional: Dodać kod do obsługi połączenia z Netlify Forms
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert("Dziękujemy za przesłanie formularza!");
+                this.submit();
+            });
+        </script>
     </body>
 
 </html>
