@@ -27,7 +27,8 @@
 
     --clr-accent: #C1121F;
     --clr-accent-transparent: rgba(193, 18, 31, 0.8);
-    --clr-light: #e9ecef;
+    --clr-light: rgb(233, 236, 239);
+    --clr-light-transparent: rgba(233, 236, 239, 0.7);
     --clr-dark: #111111;
     --clr-dark-transparent: rgba(17, 17, 17, 0.8);
 }
@@ -435,11 +436,11 @@ button.active {
     flex: 1;
     /* Obrazek zajmuje całą dostępną przestrzeń */
     width: 100%;
-    height: auto;
+    height: 400px;
     /* Umożliwia zachowanie proporcji */
     object-fit: cover;
     /* Utrzymuje proporcje */
-    object-position: center;
+    object-position: top center;
     /* Ustawia pozycję obrazu na lewą stronę */
     transition: filter 0.5s ease
 }
@@ -456,8 +457,8 @@ button.active {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--clr-dark-transparent);
-    color: var(--clr-light);
+    background-color: var(--clr-light-transparent);
+    color: var(--clr-dark);
     height: 100%;
     transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
