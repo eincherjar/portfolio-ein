@@ -3,16 +3,35 @@
 :root {
     --color-scheme: dark;
 
+    /* font-family */
     --font-family: "Baloo Paaji 2", sans-serif;
 
-    --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
-    --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
-    --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
-    --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
-    --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
-    --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
-    --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
-    --fs-1000: clamp(3.8rem, calc(3.85rem + 5.74vw), 9.52rem);
+    /* colors */
+    --clr-dark: #04151f;
+    --clr-dark-lt: #343434;
+    --clr-light: #e9ecef;
+    --clr-accent: #d90429;
+
+
+    /* font-size */
+    --fs-2xs: clamp(0.512rem, 0.4897rem + 0.1113vw, 0.576rem);
+    --fs-xs: clamp(0.64rem, 0.6122rem + 0.1391vw, 0.72rem);
+    --fs-s: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --fs-m: clamp(1.5625rem, 1.4946rem + 0.3397vw, 1.7578rem);
+    --fs-l: clamp(2.4414rem, 2.3353rem + 0.5307vw, 2.7466rem);
+    --fs-xl: clamp(3.0518rem, 2.9191rem + 0.6634vw, 3.4332rem);
+    --fs-2xl: clamp(4.7684rem, 4.5611rem + 1.0366vw, 5.3644rem);
+    --fs-3xl: clamp(9.3132rem, 8.9083rem + 2.0246vw, 10.4774rem);
+
+
+    /* space */
+    --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+    --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+    --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
+    --space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
+    --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
+    --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
 
     --clr-primary-300: hsl(219, 76%, 55%);
     --clr-primary-400: hsl(219, 76%, 40%);
@@ -59,8 +78,15 @@ h4,
 h5,
 h6,
 p,
-figure {
+figure,
+a {
     margin: 0;
+    font-family: inherit;
+}
+
+a,
+button {
+    transition: all .3s ease-in-out;
 }
 
 
@@ -70,51 +96,71 @@ img {
     object-fit: cover;
 }
 
-.content-grid {
+
+/* wrapper */
+.wrapper {
     --padding-inline: 1rem;
     --content-max-width: 900px;
-    --breakout-max-width: 1200px;
+    --wide-max-width: 1200px;
 
-    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+    --content-size: min(100% - (var(--padding-inline) * 2), var(--content-max-width));
+    --wide-size: calc((var(--wide-max-width) - var(--content-max-width)) / 2);
 
     display: grid;
     grid-template-columns:
-        [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2),
-            var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+        [full-start] minmax(var(--padding-inline), 1fr) [wide-start] minmax(0, var(--wide-size)) [content-start] var(--content-size) [content-end] minmax(0, var(--wide-size)) [wide-end] minmax(var(--padding-inline), 1fr) [full-end];
 }
 
-.content-grid> :not(.breakout, .full-width),
-.full-width> :not(.breakout, .full-width) {
+.wrapper> :not(.wide-content, .full-content),
+.full-content> :not(.wide-content, .full-content) {
     grid-column: content;
 }
 
-.content-grid>.breakout {
-    grid-column: breakout;
+.wrapper>.wide-content {
+    grid-column: wide;
 }
 
-.content-grid>.full-width {
-    grid-column: full-width;
+.wrapper>.full-content {
+    grid-column: full;
 
     display: grid;
     grid-template-columns: inherit;
 }
 
-img.full-width {
+/* images */
+img,
+svg,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+img.full {
     width: 100%;
     max-height: 45vh;
     object-fit: cover;
 }
 
-.site-title {
-    font-size: var(--fs-1000);
-    line-height: 1.05;
-    text-transform: uppercase;
-    color: var(--clr-accent);
+h1,
+h2 {
+    line-height: 1.25;
 }
 
+.site-title {
+    font-size: var(--fs-3xl);
+    color: var(--clr-accent);
+    text-transform: uppercase;
+}
+
+.site-subtitle {
+    font-size: var(--fs-l);
+}
+
+
 .section-title {
-    font-size: var(--fs-700);
-    line-height: 1.1;
+    font-size: var(--fs-2xl);
+    line-height: 1.25;
+    text-align: center;
 }
 
 .bg-primary {
@@ -149,15 +195,6 @@ img.full-width {
     font-weight: bold;
 }
 
-.visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
 
 .section-padding-xxl {
     padding-block: 25vh;
@@ -269,19 +306,23 @@ img.full-width {
 }
 
 .fs-s {
-    font-size: var(--fs-300);
+    font-size: var(--fs-s);
 }
 
 .fs-m {
-    font-size: var(--fs-600);
+    font-size: var(--fs-m);
 }
 
 .fs-l {
-    font-size: var(--fs-700);
+    font-size: var(--fs-l);
 }
 
-.lh-1 {
+.lh-m {
     line-height: 1;
+}
+
+.lh-l {
+    line-height: 1.5;
 }
 
 .primary-header {
@@ -311,7 +352,6 @@ nav a {
     color: inherit;
     padding-inline: 1.25rem;
     border-radius: .4rem;
-    transition: all .3s;
 }
 
 nav a:hover,
@@ -416,7 +456,13 @@ button.active {
     border-radius: .3em;
     text-align: center;
     padding: 1em;
-    font-size: var(--fs-300);
+    font-size: var(--fs-xs);
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.badge:hover {
+    border-radius: 1rem;
 }
 
 .card {
@@ -457,14 +503,15 @@ button.active {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--clr-light-transparent);
-    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
     height: 100%;
     transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: .3em;
 }
 
 .card:hover .card-description {
@@ -474,13 +521,6 @@ button.active {
     /* font-size: var(--fs-300); */
 }
 
-hr {
-    width: max(20vw, 300px);
-    color: var(--clr-accent);
-    border: 2px solid;
-    border-radius: 2rem;
-    margin-bottom: 3rem;
-}
 
 /* Form */
 .input-group {

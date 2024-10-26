@@ -10,45 +10,46 @@
     </head>
 
     <body>
-        <header class="primary-header content-grid">
-            <div class="primary-header__layout breakout">
+        <header class="primary-header wrapper">
+            <div class="primary-header__layout wide-content">
                 <a href="#"><img src="img/ein.svg" alt="Logo" class="logo"></a>
                 <nav>
                     <ul>
-                        <li><a href="#">O mnie</a></li>
-                        <li><a href="#">Oferta</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#about">O mnie</a></li>
+                        <li><a href="#offer">Oferta</a></li>
+                        <li><a href="#gallery">Portfolio</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <main class="content-grid">
-            <section class="section-padding-xxl txt-center breakout">
-                <h2>Cześć, jestem</h2>
+        <main class="wrapper">
+            <section class="section-padding-xxl txt-center wide-content">
+                <h2 class="site-subtitle">Cześć, jestem</h2>
                 <h1 class="site-title">Marcin</h1>
-                <p class="fs-m">
-                    Twoja wizja, mój kod – razem stworzymy coś wyjątkowego!
-                </p>
-                <p class="fs-s">Współpracując, przekształcimy Twoje pomysły w funkcjonalne rozwiązania, które będą spełniać Twoje oczekiwania i przyciągną uwagę użytkowników</p>
-                <div class="row pt-m justify-content-center align-items-center">
-                    <button class="active">Pobierz CV</button>
-                    <button>Projekty</button>
+                <div class="wrapper">
+                    <p class="fs-m">
+                        Twoja wizja, mój kod – razem stworzymy coś wyjątkowego!
+                    </p>
+                    <p class="fs-s">Współpracując, przekształcimy Twoje pomysły w funkcjonalne rozwiązania, które będą spełniać Twoje oczekiwania i przyciągną uwagę użytkowników</p>
+                    <div class="row pt-m justify-content-center align-items-center">
+                        <button class="active">Pobierz CV</button>
+                        <button>Projekty</button>
+                    </div>
                 </div>
             </section>
 
-            <section class="breakout section-padding-l">
+            <section class="wide-content section-padding-l" id="about">
                 <article class="txt-justify">
-                    <h2 class="clr-primary mb-xs section-title txt-center">O mnie</h2>
-                    <hr>
+                    <h2 class="clr-primary mb-xs section-title">O mnie</h2>
                     <p class="pb-m">jestem pasjonatem tworzenia stron internetowych oraz aplikacji webowych opartych na Django. Moja przygoda z programowaniem rozpoczęła się od fascynacji tym, jak technologie mogą zmieniać i usprawniać świat wokół nas. Dziś tworzę nowoczesne, funkcjonalne i responsywne strony internetowe oraz aplikacje, które odpowiadają na potrzeby użytkowników.</p>
                     <p class="pb-m">W swojej pracy stawiam na przejrzystość kodu, intuicyjny design oraz optymalizację pod kątem wydajności. Moim celem jest dostarczanie rozwiązań, które nie tylko wyglądają dobrze, ale także działają bez zarzutu – zarówno na poziomie frontendowym, jak i backendowym.</p>
                     <p class="pb-m">W moim portfolio znajdziesz różnorodne projekty: od prostych witryn firmowych, po bardziej zaawansowane aplikacje webowe oparte na frameworku Django. Każdy z tych projektów jest dla mnie okazją do nauki, rozwoju i doskonalenia swoich umiejętności.</p>
                     <p class="pb-m">Jeśli szukasz kogoś, kto zrealizuje Twój projekt od A do Z lub potrzebujesz wsparcia w już istniejącym projekcie – zapraszam do kontaktu. Chętnie podejmuję się nowych wyzwań i współpracy przy ciekawych projektach.</p>
                 </article>
 
-                <article class="pt-m">
+                <article class="pt-m wrapper">
                     <div class="row even-columns columns-wrap">
                         <div class="badge bg-primary"><img src="img/html5.svg" alt="HTML5" class="icon"><span class="fw-bold">HTML5</span></div>
                         <div class="badge bg-primary"><img src="img/css3.svg" alt="CSS3" class="icon"><span class="fw-bold">CSS3</span></div>
@@ -62,10 +63,10 @@
                 </article>
             </section>
 
-            <!-- TODO: dodać więcej screenó oraz opisy stron-->
-            <section class="breakout section-padding-l">
+            <!-- TODO: dodać więcej screenów oraz opisy stron-->
+            <section class="wide-content section-padding-l" id="gallery">
                 <h2 class="clr-primary mb-xs section-title txt-center">Portfolio</h2>
-                <hr>
+
                 <div class="row even-columns columns-wrap">
                     <a href="https://globetyre.pl" target="_blank" class="card">
                         <img src="img/portoflio/globetyre-pl.png">
@@ -101,16 +102,16 @@
                 </div>
             </section>
 
-            <section class="breakout section-padding-l">
+            <section class="wide-content section-padding-l" id="contact">
                 <h2 class="clr-primary mb-xs section-title txt-center">Kontakt</h2>
-                <hr>
+
                 <div class="row even-columns columns-wrap ">
                     <article>
-                        <h2 class="fs-l lh-1">Skontaktuj się ze mną</h2>
-                        <p class="lh-1 fs-s mt-s">Jeśli masz pytania lub chcesz porozmawiać o współpracy, napisz do mnie!</p>
-                        <p class="lh-1 fs-s">Z przyjemnością odpowiem na Twoją wiadomość.</p>
+                        <p class="lh-m fs-s mt-s">Jeśli masz pytania lub chcesz porozmawiać o współpracy, napisz do mnie!</p>
+                        <p class="lh-l fs-s">Z przyjemnością odpowiem na Twoją wiadomość.</p>
 
-                        <div class="row mt-m">
+                        <h2 class="fs-m lh-m mt-s">Możesz mnie również znaleźć na</h2>
+                        <div class="row mt-s">
                             <a href="#" class="btn btn-rounded"><img src="img/github.svg" alt="GitHub"><span>eincherjar</span></a>
                             <a href="#" class="btn btn-rounded"><img src="img/linkedin.svg" alt="LinkedIn"><span>eincherjar</span></a>
                         </div>
@@ -132,14 +133,14 @@
                                 <textarea name="message" id="message" placeholder="Wiadomość" required></textarea>
                             </div>
 
-                            <button type="submit" class="btn full-width mt-m">Wyślij <i class="fa-solid fa-paper-plane"></i></button>
+                            <button type="submit" class="btn full-content mt-m">Wyślij <i class="fa-solid fa-paper-plane"></i></button>
                         </form>
                     </article>
                 </div>
             </section>
         </main>
 
-        <footer class="full-width bg-primary fs-s txt-center py-m">
+        <footer class="full-content bg-primary fs-s txt-center py-m">
             <p>Copyright ©2024. All Rights Reserved.</p>
         </footer>
 
