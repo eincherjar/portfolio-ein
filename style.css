@@ -505,6 +505,7 @@ button.active {
     left: 0;
     background-color: var(--clr-accent);
     color: var(--clr-light);
+    text-align: justify;
     height: 100%;
     transition: opacity 0.5s ease, transform 0.5s ease;
     pointer-events: none;
