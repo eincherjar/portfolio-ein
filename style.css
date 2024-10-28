@@ -380,9 +380,11 @@ nav a:focus {
     flex-wrap: wrap;
 }
 
-button {
+button,
+.btn-primary {
+    color: inherit;
     font-size: var(--fs-300);
-    padding-block: .5em;
+    padding-block: .3em;
     padding-inline: 2em;
     border: 1px solid var(--clr-accent);
     border-radius: .4em;
@@ -391,8 +393,11 @@ button {
 }
 
 button:hover,
+.btn-primary:hover,
 button:focus,
-button.active {
+.btn-primary:focus,
+button.active,
+.btn-primary.active {
     background-color: var(--clr-accent);
 }
 
